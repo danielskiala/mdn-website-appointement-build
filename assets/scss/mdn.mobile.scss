@@ -1,0 +1,375 @@
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .contenair {
+    max-width: 970px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .container_wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /***************************************************/
+  /***** BANNER
+  /***************************************************/
+  .banner {
+    width: 100%;
+    height: 400px;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
+    overflow: hidden;
+
+    .banner_wrapper {
+
+      // background: none;
+      &::after {
+        display: none;
+        bottom: 150px;
+        right: -20px;
+        // background-size: 100px;
+        // background-position: 0% top 10%;
+      }
+    }
+
+    .banner_content {
+      width: 100%;
+      gap: 4rem;
+
+      .banner_title {
+        max-width: 100%;
+        margin: 0 auto;
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .banner_search {
+        width: 100%;
+        min-width: 100%;
+        position: relative;
+
+        .dropdown_banner_search {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          background-color: var(--white_base);
+          border-radius: 1rem;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 5%);
+          transform: translateY(8px);
+
+          // display: block;
+          .speciality_wrapper {
+            width: 100%;
+
+            .speciality_flex {
+              @include flexBet;
+
+              .speciality_card {
+                width: 50%;
+                border-right: 1.2px solid var(--grey_four);
+                overflow-y: auto;
+                max-height: 240px;
+
+                &::-webkit-scrollbar {
+                  border-radius: 0 1rem 0 0;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                  border-radius: 0 1rem 0 0;
+                }
+
+                .specialty_card_title {
+                  padding: 1rem 2rem 0.8rem;
+                  margin-bottom: 0.8rem;
+                  background-color: var(--white_base);
+                  position: sticky;
+                  top: 0;
+                  left: 0;
+                  border-radius: 1rem 1rem 0 0;
+
+                  p {
+                    font-size: 1.4rem;
+                    font-family: "Lato-Bold";
+                  }
+                }
+
+                .speciality_cards_flex {
+                  @include flexCol;
+                  gap: 0.4rem;
+                  padding-left: 1rem;
+                  padding-right: 1rem;
+                }
+
+                .speciality {
+                  font-family: "Lato-Regular";
+                  padding: 0.5rem 1rem;
+                  cursor: pointer;
+
+                  &.active,
+                  &:hover {
+                    background-color: var(--green_primary);
+                  }
+                }
+
+                .doctor {
+                  width: 100%;
+                  @include flex;
+                  align-items: center;
+                  gap: 0.8rem;
+                  cursor: pointer;
+                  padding: 0.5rem 1rem;
+
+                  &.active,
+                  &:hover {
+                    background-color: var(--green_primary);
+                  }
+
+                  .doctor_image {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 50%;
+                      object-fit: cover;
+                      object-position: center;
+                    }
+                  }
+
+                  .doctor_info {
+                    @include flexCol;
+                    line-height: 1.5;
+
+                    .name {
+                      font-size: 1.3rem;
+                      font-family: "Lato-Bold";
+                    }
+
+                    .skill {
+                      font-size: 1.3rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .doctors_wrapper {
+  //   display: none;
+  // }
+
+  .doctors_wrapper {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    .doctors_cards_content {
+      width: 100%;
+
+      .doctor_card {
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+
+        .doctor_infos {
+          width: 100%;
+        }
+
+        .doctor_schedule {
+          width: 100%;
+
+          .days_wrapper {
+            width: 100%;
+
+            .days_content {
+              width: 100%;
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              flex-wrap: nowrap;
+
+              // overflow: hidden;
+              .day {
+                .day_header {
+
+                  // padding: 0 0 1rem;
+                  .day_name {
+                    font-family: "Lato-Bold";
+                    font-size: 1.4rem;
+                  }
+
+                  .day_number {
+                    font-size: 1.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /***************************************************/
+  /***** DOCTORS SKELETON
+  /***************************************************/
+  .doctors_cards_content_skeleton {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .doctor_card_skeleton {
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+
+    .doctor_infos_skeleton {
+      @include flexCol;
+      gap: 1rem;
+      width: 100%;
+
+      .doctor_profil_skeleton {
+        @include flex;
+        gap: 0.8em;
+
+        .doctor_info_skeleton {
+          @include flexCol;
+          gap: 0.7rem;
+        }
+      }
+
+      .doctor_locate_skeleton {
+        @include flexCol;
+        gap: 0.8rem;
+      }
+    }
+
+    .doctor_schedule_skeleton {
+      position: relative;
+      width: 100%;
+
+      .days_wrapper_skeleton {
+        width: 100%;
+        @include flex;
+        gap: 0.7rem;
+
+        .days_content_skeleton {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+
+          .day_skeleton {
+            @include flexCol;
+            place-items: center;
+
+            .day_header_skeleton {
+              padding: 0 0rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 390px) {
+  .doctors_wrapper {
+    display: block;
+
+    .doctors_cards_content {
+      width: 100%;
+
+      .doctor_card {
+        .doctor_schedule {
+          width: 100%;
+
+          .days_wrapper {
+            width: 100%;
+
+            .days_content {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /***************************************************/
+  /***** DOCTORS SKELETON
+  /***************************************************/
+  .doctors_cards_content_skeleton {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .doctor_card_skeleton {
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+
+    .doctor_infos_skeleton {
+      @include flexCol;
+      gap: 1rem;
+      width: 100%;
+
+      .doctor_profil_skeleton {
+        @include flex;
+        gap: 0.8em;
+
+        .doctor_info_skeleton {
+          @include flexCol;
+          gap: 0.7rem;
+        }
+      }
+
+      .doctor_locate_skeleton {
+        @include flexCol;
+        gap: 0.8rem;
+      }
+    }
+
+    .doctor_schedule_skeleton {
+      position: relative;
+      width: 100%;
+
+      .days_wrapper_skeleton {
+        width: 100%;
+        @include flex;
+        gap: 0.7rem;
+
+        .days_content_skeleton {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {}
+
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .contenair {
+    max-width: 700px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .contenair_shop {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 40px;
+  }
+}

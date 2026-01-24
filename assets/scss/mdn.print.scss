@@ -1,0 +1,123 @@
+.appt_wrapper_print {
+  width: 100%;
+  display: none;
+}
+
+.appt_print_title {
+  text-align: center;
+}
+
+.appt_wrapper_print {
+  width: 100%;
+}
+
+.appt_print_title {
+  text-align: center;
+}
+
+.appts_print_cards {
+  width: 100%;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: masonry; /* expérimental */
+  // // align-items: start;
+  // gap: 1rem;
+  margin-top: 20px;
+
+  column-count: 2;
+  column-gap: 10px;
+  .appt_print_card {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    .print_card_title {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .print_card_table {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        border: 1px solid #242424;
+
+        th,
+        td {
+          font-size: 13px;
+          padding: 4px 10px;
+        }
+
+        th {
+          &:nth-child(1) {
+            width: 5%;
+          }
+
+          &:not(&:nth-child(3)) {
+            border-right: 1px solid #242424;
+          }
+        }
+
+        td {
+          &:nth-child(1) {
+            width: 5%;
+          }
+
+          &:not(&:nth-child(3)) {
+            border-right: 1px solid #242424;
+          }
+        }
+
+        tr {
+          border: 1px solid #242424;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .appt_wrapper_print {
+    display: block;
+  }
+
+  .wrapper {
+    display: none;
+  }
+
+  * {
+    print-color-adjust: axact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 4mm 3mm;
+    size: A4 Portrait;
+  }
+
+  html {
+    background-color: #fff !important;
+    margin: 0 !important;
+    height: 100% !important;
+  }
+
+  body {
+    font-size: 12px;
+    background-image: none !important;
+    background-color: #fff !important;
+    height: 100% !important;
+    /* margin: 10mm 15mm 10mm 15mm; */
+  }
+
+  table {
+    thead {
+      break-inside: avoid;
+    }
+  }
+  .appts_print_cards {
+    .appt_print_card {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+}
