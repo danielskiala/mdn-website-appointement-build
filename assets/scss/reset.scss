@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: "Lato-Regular";
   font-optical-sizing: auto;
   font-weight: 400;
@@ -154,6 +154,7 @@ button[disabled] {
   }
   cursor: not-allowed !important;
 }
+
 
 @media screen and (max-width: 480px) {
   h1 {

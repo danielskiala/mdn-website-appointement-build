@@ -21,7 +21,6 @@
     overflow: hidden;
 
     .banner_wrapper {
-
       // background: none;
       &::after {
         display: none;
@@ -163,15 +162,14 @@
     }
   }
 
-  // .doctors_wrapper {
-  //   display: none;
-  // }
+  /***************************************************/
+  /***** DOCTORS
+  /***************************************************/
 
   .doctors_wrapper {
     display: block;
     padding-left: 2rem;
     padding-right: 2rem;
-
     .doctors_cards_content {
       width: 100%;
 
@@ -199,7 +197,6 @@
               // overflow: hidden;
               .day {
                 .day_header {
-
                   // padding: 0 0 1rem;
                   .day_name {
                     font-family: "Lato-Bold";
@@ -275,6 +272,97 @@
               padding: 0 0rem 1rem;
             }
           }
+        }
+      }
+    }
+  }
+
+  /***************************************************/
+  /***** BOOKED
+  /***************************************************/
+  .book_wrapper {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 8rem;
+    .book_content {
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+
+      .book_content_wrapper {
+        width: 100%;
+      }
+
+      .book_content_item {
+        width: 100%;
+      }
+
+      .doctor {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        .doctor_content {
+          width: 100%;
+
+          .doctor_profil {
+            @include flexBet;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            .doctor_profil_left {
+              @include flex;
+              gap: 1rem;
+              pointer-events: none;
+            }
+
+            .doctor_profil_right {
+              @include flex;
+              align-items: center;
+              gap: 0.5rem;
+              font-family: "Lato-Bold";
+              font-size: 1.5rem;
+              pointer-events: none;
+              .doctor_icon {
+                line-height: 0px;
+                svg {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+            }
+
+            .doctor_img {
+              width: 30px;
+              height: 30px;
+            }
+
+            .doctor_name {
+              line-height: 1.2;
+            }
+          }
+
+          .doctor_book_content_wrapper {
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.4s;
+          }
+
+          .price_appt {
+            font-size: 1.5rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+          }
+        }
+      }
+
+      .form_btn {
+        button {
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 1.5rem;
+          font-family: "Lato-Black";
         }
       }
     }
@@ -358,7 +446,8 @@
   }
 }
 
-@media screen and (max-width: 490px) {}
+@media screen and (max-width: 490px) {
+}
 
 @media screen and (min-width: 700px) and (max-width: 999px) {
   .contenair {

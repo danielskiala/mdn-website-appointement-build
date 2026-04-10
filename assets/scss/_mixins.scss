@@ -4,10 +4,12 @@ $animation-duration: 1.6s;
 $avatar-offset: 52 + 16;
 
 @mixin background-gradient {
-  background-image: linear-gradient(90deg,
-      $base-color 0px,
-      $shine-color 40px,
-      $base-color 80px);
+  background-image: linear-gradient(
+    90deg,
+    $base-color 0px,
+    $shine-color 40px,
+    $base-color 80px
+  );
   background-size: 600px;
 }
 
@@ -60,7 +62,7 @@ $avatar-offset: 52 + 16;
   padding: 13px 30px;
   color: var(--white_base);
   cursor: pointer;
-  font-family: "Lato-Regular";
+  font-family: "Lato-Bold";
   font-size: 1.6rem;
   position: relative;
   @include flexMid;
@@ -72,7 +74,9 @@ $avatar-offset: 52 + 16;
   font-weight: 600;
   // box-shadow: var(--button-shadow-500);
   border-radius: 9px;
-  transition: transform 0s ease 0s, background-color 0s ease 0s,
+  transition:
+    transform 0s ease 0s,
+    background-color 0s ease 0s,
     all 0.3s ease 0s;
 
   .icon {
@@ -90,14 +94,20 @@ $avatar-offset: 52 + 16;
     height: 24px;
     border-radius: 50%;
     z-index: 10;
-    background: radial-gradient(farthest-side, var(--white_base) 94%, #0000) top/3.8px 3.8px no-repeat,
+    background:
+      radial-gradient(farthest-side, var(--white_base) 94%, #0000) top/3.8px
+        3.8px no-repeat,
       conic-gradient(#0000 30%, var(--white_base));
-    mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--white_base) 0);
-    -webkit-mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--white_base) 0);
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--white_base) 0
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--white_base) 0
+    );
     animation: spinner-c7wet2 0.4s infinite linear;
     opacity: 0;
   }
@@ -126,12 +136,16 @@ $avatar-offset: 52 + 16;
     color: var(--b100-text-color);
 
     &::before {
-      background: radial-gradient(farthest-side, var(--loader-color) 94%, #0000) top/3.8px 3.8px no-repeat,
+      background:
+        radial-gradient(farthest-side, var(--loader-color) 94%, #0000) top/3.8px
+          3.8px no-repeat,
         conic-gradient(#0000 30%, var(--loader-color));
       mask: radial-gradient(farthest-side, #0000 calc(100% - 3.8px), #000 0);
-      -webkit-mask: radial-gradient(farthest-side,
-          #0000 calc(100% - 3.8px),
-          #000 0);
+      -webkit-mask: radial-gradient(
+        farthest-side,
+        #0000 calc(100% - 3.8px),
+        #000 0
+      );
     }
   }
 }
@@ -148,7 +162,9 @@ $avatar-offset: 52 + 16;
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
-  transition: transform 0s ease 0s, background-color 0s ease 0s,
+  transition:
+    transform 0s ease 0s,
+    background-color 0s ease 0s,
     all 0.3s ease 0s;
   padding-left: 10px;
   padding-right: 10px;
@@ -250,14 +266,20 @@ $avatar-offset: 52 + 16;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: radial-gradient(farthest-side, var(--green_second) 94%, #0000) top/3.8px 3.8px no-repeat,
+    background:
+      radial-gradient(farthest-side, var(--green_second) 94%, #0000) top/3.8px
+        3.8px no-repeat,
       conic-gradient(#0000 30%, var(--green_second));
-    mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--green_second) 0);
-    -webkit-mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--green_second) 0);
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--green_second) 0
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--green_second) 0
+    );
     animation: spinner-c7wet2 0.4s infinite linear;
     opacity: 0;
   }
@@ -273,13 +295,14 @@ $avatar-offset: 52 + 16;
   margin-bottom: 1.5rem;
 
   label {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: "Lato-Regular";
     display: inline-block;
     margin-bottom: 1rem;
     color: var(--grey_primary);
   }
 
+  select,
   textarea,
   input {
     @include input;
@@ -299,6 +322,29 @@ $avatar-offset: 52 + 16;
     &::-webkit-inner-spin-button {
       display: none;
     }
+  }
+
+  &:has(select) {
+    position: relative;
+    display: block;
+    &::after {
+      content: "▼";
+      font-size: 12px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(50%);
+      color: var(--grey_primary);
+      pointer-events: none; /* Permet de cliquer "à travers" la flèche */
+    }
+  }
+
+  select {
+    -webkit-appearance: none; /* Pour Safari et Chrome iOS */
+    appearance: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
   }
 
   .msg_error {
@@ -430,17 +476,23 @@ $avatar-offset: 52 + 16;
 
 @keyframes dots_anim {
   0% {
-    box-shadow: 16px 0, -16px 0;
+    box-shadow:
+      16px 0,
+      -16px 0;
     background: transparent;
   }
 
   33% {
-    box-shadow: 16px 0, -16px 0 rgba(255, 255, 255, 0.13);
+    box-shadow:
+      16px 0,
+      -16px 0 rgba(255, 255, 255, 0.13);
     background: rgba(255, 255, 255, 0.13);
   }
 
   66% {
-    box-shadow: 16px 0 rgba(255, 255, 255, 0.13), -16px 0;
+    box-shadow:
+      16px 0 rgba(255, 255, 255, 0.13),
+      -16px 0;
     background: rgba(255, 255, 255, 0.13);
   }
 }

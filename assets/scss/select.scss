@@ -3,6 +3,7 @@
   position: relative;
   user-select: none;
   -webkit-user-select: none;
+
   .select_input {
     display: flex !important;
     justify-content: space-between !important;
@@ -12,6 +13,7 @@
     margin: 0;
     border-radius: 5px;
     cursor: pointer;
+
     input::placeholder {
       color: var(--grey_primary) !important;
     }
@@ -23,6 +25,7 @@
       transform: rotate(-180deg);
       // transform-origin: 1 1;
       transition: transform 0.2s ease 0s;
+
       &.rotate {
         transform: rotate(0deg);
       }
@@ -35,11 +38,12 @@
     }
 
     &.focus {
-      box-shadow: 0px 0px 0px 0.2rem var(--green_base);
+      box-shadow: 0px 0px 0px 0.1rem var(--green_base);
     }
 
     &.input_error {
       background-color: var(--red_second);
+
       &.focus {
         box-shadow: 0px 0px 0px 0.2rem var(--red_primary);
       }
@@ -64,6 +68,7 @@
     pointer-events: none;
     visibility: hidden;
     transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+
     &::-webkit-scrollbar {
       border-radius: 0 4px 4px 0;
     }
@@ -89,17 +94,23 @@
       width: 100%;
       padding: 10px 12px;
       transition: all 0.2s ease 0s;
-      font-family: "Lato-Bold";
-      font-size: 1.2rem;
-      border-radius: 5px;
+      font-family: "Lato-Regular";
+      font-size: 1.4rem;
       color: var(--grey_primary);
       @include flex;
       align-items: center;
       gap: 8px;
       cursor: pointer;
       text-transform: lowercase;
+
+      &:last-child,
+      &:first-child {
+        border-radius: 5px 5px 0 0;
+      }
+
       .icon {
         line-height: 0px;
+
         svg {
           width: 18px;
           height: 18px;
@@ -108,7 +119,12 @@
 
       .label {
         text-transform: capitalize;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
       }
+
       &.selected,
       &:hover {
         color: var(--green_second);
@@ -129,8 +145,10 @@
     .select_input_search {
       width: 100%;
       @include group_form_search;
+
       input {
         padding-left: 40px !important;
+
         &:focus {
           box-shadow: none;
         }

@@ -86,13 +86,15 @@
     @include flexMid;
     align-items: center;
     color: var(--grey_seven);
-    background: url("../icons/benefits-background1.svg") no-repeat left 0% top 50%;
+    background: url("../icons/benefits-background1.svg") no-repeat left 0% top
+      50%;
     position: relative;
 
     &::after {
       content: "";
       position: absolute;
-      background: url("../icons/medical-medicine-health-25.svg") no-repeat right 0% top 10%;
+      background: url("../icons/medical-medicine-health-25.svg") no-repeat right
+        0% top 10%;
       width: 100%;
       height: 100%;
     }
@@ -168,7 +170,7 @@
           margin: 0;
           position: absolute;
           right: 10px;
-          font-family: 'Lato-Regular';
+          font-family: "Lato-Regular";
 
           button {
             @include flexMid;
@@ -176,7 +178,7 @@
             padding: 1rem;
             width: 50px;
             height: 40px;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
 
             &::before {
               width: 20px;
@@ -317,9 +319,6 @@
 .doctors_wrapper {
   padding-bottom: 8rem;
   margin-top: 3rem;
-  // position: relative;
-  // background-color: red;
-  // min-height: 100%;
   display: grid;
 
   .doctors_cards_content {
@@ -410,11 +409,11 @@
             cursor: pointer;
             line-height: 0px;
             color: var(--green_base);
-            transition: all .3s;
+            transition: all 0.3s;
 
             &.disabled_icon {
               pointer-events: none;
-              opacity: .3;
+              opacity: 0.3;
             }
 
             svg {
@@ -504,7 +503,7 @@
               align-items: center;
               visibility: hidden;
               opacity: 0;
-              transition: all .3s;
+              transition: all 0.3s;
               pointer-events: none;
 
               &.active {
@@ -600,9 +599,6 @@
   @include flexCol;
   gap: 1.4rem;
   background-color: var(--green_primary);
-  // position: absolute;
-  // left: 50%;
-  // transform: translate(-50%, 0);
   grid-area: 1 / 1;
   z-index: 400;
   transition: all 0.4s;
@@ -1243,6 +1239,308 @@ body:has(.modal_default.open) {
 }
 
 /***************************************************/
+/***** BOOKED
+/***************************************************/
+
+.book_wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+
+  .book_title {
+    margin-bottom: 2rem;
+    .btn_back {
+      @include flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transform: translateX(-9px);
+      font-size: 1.5rem;
+      font-family: "Lato-Bold";
+      .icon {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+        line-height: 0px;
+      }
+    }
+  }
+
+  .book_content {
+    @include flex;
+    width: 100%;
+    gap: 2rem;
+
+    .book_content_wrapper {
+      width: 75%;
+      padding: 2rem;
+      background-color: var(--white_base);
+      border: 1px solid var(--grey_four);
+      border-radius: 1rem;
+      .book_content_item {
+        width: 100%;
+        .input_form_sexe {
+          margin-top: 1.2rem;
+
+          .group_form_flex {
+            gap: 2rem;
+
+            .group_form {
+              width: auto;
+            }
+          }
+
+          p {
+            font-family: "Lato-Bold";
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+
+        .group_form {
+          width: 100%;
+
+          textarea {
+            resize: none;
+          }
+        }
+
+        .convention_form {
+          display: none;
+
+          &.show_convention_select {
+            display: block;
+          }
+        }
+
+        &.hidden_book_content{
+          display:none;
+        }
+      }
+    }
+
+    .doctor {
+      align-self: flex-start;
+      background-color: var(--white_base);
+      border-radius: 1rem;
+      border: 1px solid var(--grey_four);
+      width: 35%;
+      position: sticky;
+      top: 20px;
+
+      .doctor_content {
+        width: 100%;
+
+        .doctor_profil {
+          @include flexBet;
+          gap: 1rem;
+          padding: 2rem 2rem 1rem;
+          align-items: center;
+          .doctor_profil_left {
+            @include flex;
+            gap: 1rem;
+          }
+
+          .doctor_profil_right {
+            display: none;
+          }
+
+          .doctor_img {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .doctor_name {
+            h4 {
+              font-family: "Lato-Bold";
+            }
+
+            p {
+              font-size: 1.4rem;
+              color: var(--grey_primary);
+            }
+          }
+        }
+
+        hr {
+          display: block;
+          border: none;
+          border-top: 1px solid var(--grey_four);
+        }
+
+        .booking_detail {
+          width: 100%;
+          padding: 1rem 2rem 2rem;
+
+          .head_title {
+            p {
+              font-family: "Lato-Bold";
+            }
+          }
+
+          .booking_items_detail {
+            margin-top: 1rem;
+            @include flexCol;
+            gap: 0.9rem;
+
+            .bk_itm_dt {
+              @include flex;
+              gap: 0.4rem;
+              align-items: center;
+
+              .icon {
+                line-height: 0px;
+
+                svg {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+
+              .label {
+                font-size: 1.4rem;
+              }
+            }
+          }
+        }
+
+        .price_appt {
+          width: 100%;
+          @include flexCol;
+          gap: 0.2rem;
+          font-family: "Lato-Regular";
+          font-size: 1.4rem;
+          padding: 1rem 2rem 1rem;
+
+          .price_appt_item {
+            width: 100%;
+            @include flexBet;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  .method_cards {
+    width: 100%;
+    margin-top: 20px;
+
+    .method_card_selects {
+      width: 100%;
+      @include flexCol;
+      gap: 14px;
+
+      .method_item_select {
+        width: 100%;
+        @include flexBet;
+        align-items: center;
+        background-color: var(--green_primary);
+        box-shadow: var(--box-shadow);
+        border: 1px solid var(--green_base);
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0px 0px 0px 3px transparent;
+        cursor: pointer;
+
+        .select_name {
+          p {
+            font-family: "Lato-Regular";
+          }
+        }
+
+        .radio {
+          border: 1px solid var(--green_base);
+          border-color: var(--green_base);
+
+          &::after {
+            background-color: var(--green_base);
+          }
+        }
+
+        &:has(.radio:checked) {
+          border-color: var(--green_base);
+          box-shadow: 0px 0px 0px 1px var(--green_base);
+        }
+
+        &[inert] {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .method_form {
+      width: 100%;
+      box-shadow: var(--box-shadow);
+      padding: 1.6rem 0;
+
+      .group_form {
+        width: 100%;
+      }
+
+      .group_form_flex {
+        @include flex;
+        gap: 10px;
+      }
+
+      .label_imgs {
+        @include flexBet;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+
+        .blocs_imgs {
+          @include flex;
+          gap: 5px;
+          margin-left: auto;
+
+          img {
+            max-width: 25px;
+            max-height: 25px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 3px;
+          }
+        }
+
+        .blocs_svgs {
+          @include flex;
+          gap: 5px;
+
+          .icon {
+            svg {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+
+      display: none;
+      opacity: 0;
+
+      &.active {
+        opacity: 1;
+        display: block;
+        animation: fadeIn 0.4s ease-out 0s;
+      }
+    }
+  }
+}
+
+/***************************************************/
 /***** FORM GROUP
 /***************************************************/
 .group_form_flex {
@@ -1344,6 +1642,77 @@ body:has(.modal_default.open) {
   }
 }
 
+.labels_input {
+  @include flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.8rem;
+
+  .label_item {
+    @include flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: var(--green_primary);
+    border: 1px solid var(--grey_four);
+    border-radius: 1000px;
+
+    input[type="radio"] {
+      @include flexMid;
+      display: none;
+      flex-shrink: 0;
+      align-items: center;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      margin: 0;
+      border: 1px solid var(--green_base);
+      background-color: var(--white_base);
+      border-radius: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--green_base);
+        border-radius: 100%;
+        opacity: 0;
+      }
+
+      &:checked {
+        box-shadow: 0px 0px 0px 0.1rem var(--green_base);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .icon {
+      line-height: 0px;
+
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    .label {
+      font-size: 1.4rem;
+    }
+
+    &:has(input:checked) {
+      background-color: var(--green_primary);
+      border-color: var(--green_base);
+      color: var(--green_base);
+      box-shadow: 0px 0px 0px 0.5px var(--green_base);
+    }
+  }
+}
+
 /***************************************************/
 /***** SKELETON
 /***************************************************/
@@ -1412,14 +1781,20 @@ body:has(.modal_default.open) {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: radial-gradient(farthest-side, var(--green_second) 94%, #0000) top/3.8px 3.8px no-repeat,
+    background:
+      radial-gradient(farthest-side, var(--green_second) 94%, #0000) top/3.8px
+        3.8px no-repeat,
       conic-gradient(#0000 30%, var(--green_second));
-    mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--green_second) 0);
-    -webkit-mask: radial-gradient(farthest-side,
-        #0000 calc(100% - 3.8px),
-        var(--green_second) 0);
+    mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--green_second) 0
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 3.8px),
+      var(--green_second) 0
+    );
     animation: spinner-c7wet2 0.4s infinite linear;
   }
 
@@ -1432,28 +1807,41 @@ body:has(.modal_default.open) {
 .dots {
   width: 40px;
   height: 19.2px;
-  background: radial-gradient(circle closest-side, var(--green_base) 90%, #0000) 0% 50%,
+  background:
+    radial-gradient(circle closest-side, var(--green_base) 90%, #0000) 0% 50%,
     radial-gradient(circle closest-side, var(--green_base) 90%, #0000) 50% 50%,
     radial-gradient(circle closest-side, var(--green_base) 90%, #0000) 100% 50%;
-  background-size: calc(100%/3) 9.6px;
+  background-size: calc(100% / 3) 9.6px;
   background-repeat: no-repeat;
   animation: dots-7ar3yq 1s infinite linear;
 }
 
 @keyframes dots-7ar3yq {
   20% {
-    background-position: 0% 0%, 50% 50%, 100% 50%;
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 50%;
   }
 
   40% {
-    background-position: 0% 100%, 50% 0%, 100% 50%;
+    background-position:
+      0% 100%,
+      50% 0%,
+      100% 50%;
   }
 
   60% {
-    background-position: 0% 50%, 50% 100%, 100% 0%;
+    background-position:
+      0% 50%,
+      50% 100%,
+      100% 0%;
   }
 
   80% {
-    background-position: 0% 50%, 50% 50%, 100% 100%;
+    background-position:
+      0% 50%,
+      50% 50%,
+      100% 100%;
   }
 }
